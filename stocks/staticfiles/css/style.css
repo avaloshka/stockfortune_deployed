@@ -1,0 +1,33 @@
+body {
+	background: #EAF6F6;
+}
+
+p {
+	text-align: left;
+}
+
+.link-color {
+	color: #f6eaf6;
+}
+
+.logo {
+        font-family: 'Great Vibes', cursive;
+        font-size: 90px;
+        color: black;
+      }
+
+.link {
+	color: black;
+}
+
+.page-title {
+	background-color: #b4dfdf
+}
+
+.text-color-black {
+	text-decoration-color: black;
+}
+
+.use {
+	text-align: center;
+}

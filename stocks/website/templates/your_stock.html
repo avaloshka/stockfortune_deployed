@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Your stock{% endblock %}
+
+{% block content %}
+	<br>
+
+	
+
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row g-1 align-items-center">
+
+				<form class="d-flex" name='form' action="{% url 'your_stock' %}" method="POST">
+						{% csrf_token %}
+		            <div class="col-auto">
+					    <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" placeholder="Enter stock to" name='name'>
+					</div>
+					<div class="col-auto">
+					    <button class="btn btn-outline-success" type="submit">Follow</button>
+					</div>
+		        </form>
+			</div>
+
+				
+				{% if user %}
+					
+					<br>
+					<h3>{{ ticker }}</h3>
+					<br>
+					<br>
+				{% endif %}
+
+				{% if ticker %}
+					<img class="img-fluid" src="data:image/png;base64,{{ uri }}" alt="" height="750" width="1125">
+					<br>
+					<br>
+					<br>
+				{% endif %}
+				
+		</div>
+	</div>
+
+{% endblock %}

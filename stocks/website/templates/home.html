@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block fonts %}{% endblock %}
+
+{% block content %}
+	<br>
+	
+	
+	<div class="container-fluid">
+		<div class="container-fluid ">
+			<p class="container-fluid logo" style="">
+				"Stock Fortune" is the strategy<br>
+				 
+			</p>
+			<p class="container-fluid logo" style="text-align: center;">
+				that can make you a millioner.
+			</p>
+
+			<p class="" style="float: right; margin-right: 100px; font-size: 4em;">
+				<a class="btn btn-outline-success me-2 container-fluid" href="{% url 'introduction' %}">Continue to Introduction</a>
+			</p>
+		</div>
+	</div>
+	
+{% endblock %}

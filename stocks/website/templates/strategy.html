@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Strategy {% endblock %}
+
+{% block content %}
+
+	
+	
+
+	<br>
+	<div class="container">
+
+		<div class="container text-center">
+		  
+		  <div class="row">
+		    <div class="col-md-8 offset-md-2">
+		    	<hr>
+		    	<p>
+					Here is the algorithm for my program that works as a back-end on this website: <br>	
+				</p>
+				<h5>
+					It is made to buy and hold  a stock for 1 -3 month.
+				</h5>
+				<br>
+				<p>
+					1. It identifies winning sector of market. For this I use price data for 1 week , 1month and 3 month.
+				</p>
+				<p>
+					2. Applies Beta 1.5. This is done to find volatile stock which moves with the market trend but overshoots by 50%. I need predictability when possible yet still with big moves in price so I could trade. The Beta is used when we want to Short the stock or to go Long.
+				</p>
+				<br>
+				<h5>
+					At the end of this operation amount of stock for analysis is greatly diminished (from 8000- 	to around 250)
+				</h5>
+				<br>
+
+				<p>3. For additional settings – or personal preference</p>
+				<p>
+					4. Apply Bollinger Bands. Bollinger Bands- provides relative definition of high and low (20 periods, 2 standard deviations)
+				</p>
+				<p>5. Choose the stock with wider difference in bullinger bands.</p>
+				<p>
+					6. Get the Buy and Sell points<br>
+					<br>
+						if Buy – show the chart<br>
+						if Sell – show the chart 
+				</p>
+								<p>I should only have a couple of stocks now that my program will recommend to buy.</p>
+
+				<h5>To further analyze the stock I use:</h5>
+				<br>
+				<p>1. Horizontal support resistance / with Bullinger bands</p>
+				<p>2. Channel up / with Bullinger bands</p>
+				<br>
+				<br>
+
+				<h5>Buying stock must work together with a strategy of protecting your trade.</h5>
+				<br>
+				{% if user.is_authenticated %}
+				<br>
+				<p>Here is the stock selected by bot at midnight: </p>
+				<br>
+				<br>
+				<h3>{{ names }}</h3>
+				<br>
+				{% endif %}
+
+				{% if not user.is_authenticated %}
+				<br>
+				<p class="logo" style="float: right; margin-right: 100px; font-size: 4em;">
+					<a href="{% url 'register_user' %}">Register to see charts</a>	
+				</p>
+				<br>
+				<br>
+				<br>
+					<h3 style="text-align: right;">or</h3>
+				
+				<p class="logo" style="float: right; margin-right: 100px; font-size: 4em;">
+					<a href="{% url 'login' %}">Login</a>
+				<br>
+				<br>
+				<br>
+				<br>
+				{% endif %}
+				
+				
+
+					<p class="" style="float: right; margin-right: 100px; font-size: 4em;">
+						<a class="btn btn-outline-success me-2" href="{% url 'protecting_your_trade' %}">Continue to "Protecting your trade"</a>
+					</p>
+
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+
+				<h5>DISCLAIMER</h5>
+					<br>
+					<br>
+				<p style="text-align: left;">
+					Trading stocks, options and other securities involves risk. The risk of loss in trading securities can be substantial. The risk involved with trading stocks, options and other securities are not suitable for all investors.
+				</p>
+
+				
+
+				<p style="text-align: left;">
+					The information presented on the website is for educational purposes and is not instended to be used as a sole basis of any investment decisions, nor should it be construed as advice designed to  meet the investment needs of any particular investor. 
+				</p>
+
+				
+
+				<p style="text-align: left;">
+					Nothing presented on the website constitutes legal, accounting or tax advice, or individually tailored investment advice. <br>
+
+				</p>
+
+				<br>
+				<br>
+				<br>
+
+				
+				<br>
+				<br>
+				<br>
+			</div>
+		  </div>
+		</div>
+
+		
+	</div>
+{% endblock %}
